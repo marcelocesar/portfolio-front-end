@@ -37,6 +37,7 @@ p {
 
 img {
     max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -147,31 +148,28 @@ nav {
     border-radius: 15px;
     overflow: hidden;
     position: relative;
+    height: 200px;
 }
 
-.recent-works article figcaption::before,
-.personal-startup article figcaption::before {
-    content: " ";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+.recent-works article figure:hover figcaption,
+.personal-startup article figure:hover figcaption {
+    opacity: 1;
 }
 
 .recent-works article figcaption,
 .personal-startup article figcaption {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20% 0 0 0;
+    text-align: center;
 }
 
 .recent-works article figcaption h3,
@@ -209,6 +207,7 @@ footer .brand {
     padding: 0.55em 0.75em;
     text-align: center;
     white-space: nowrap;
+    transition: 2s ease;
 }
 
 .btn-cicle {
@@ -217,8 +216,12 @@ footer .brand {
 
 .btn-primary {
     color: #c51e63;
-    background-color: #fff;
     border: 2px solid #c51e63;
+}
+
+.btn-primary:hover {
+    color: #f50057;
+    border: 2px solid #f50057;
 }
 
 /* tablet */
